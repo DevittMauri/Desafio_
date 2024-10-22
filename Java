@@ -1,0 +1,33 @@
+import java.util.Arrays;
+
+public class InterpolacionLineal {
+    public static void main(String[] args) {
+        // Datos
+        double[] horas = {10, 12, 15}; // en formato de 24 horas
+        double[] temperaturas = {15, 20, 22}; // temperaturas en grados Celsius
+
+        // Hora a interpolar
+        double horaInterpolada = 13.5; // 1:30 PM en formato de 24 horas
+
+        // Realizar la interpolación
+        double tempInterpolada = interpolar(horas, temperaturas, horaInterpolada);
+
+        // Mostrar el resultado
+        System.out.printf("La temperatura estimada a la 1:30 PM es de %.2f°C\n", tempInterpolada);
+    }
+
+    // Método para interpolar
+    public static double interpolar(double[] x, double[] y, double xInterpolado) {
+        int n = x.length;
+
+        // Buscar en qué intervalo está xInterpolado
+        for (int i = 0; i < n - 1; i++) {
+            if (xInterpolado >= x[i] && xInterpolado <= x[i + 1]) {
+                // Aplicar fórmula de interpolación lineal
+                return y[i] + (xInterpolado - x[i]) * (y[i + 1] - y[i]) / (x[i + 1] - x[i]);
+            }
+        }
+        // Si no se encuentra dentro del rango, retornar NaN
+        return Double.NaN;
+    }
+}
