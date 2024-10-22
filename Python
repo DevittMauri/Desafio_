@@ -1,0 +1,25 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Datos
+horas = np.array([10, 12, 15])  # en formato de 24 horas
+temperaturas = np.array([15, 20, 22])  # temperaturas en grados Celsius
+
+# Hora a interpolar
+hora_interpolada = 13.5  # 1:30 PM en formato de 24 horas
+
+# Interpolación lineal
+temp_interpolada = np.interp(hora_interpolada, horas, temperaturas)
+
+# Mostrar el resultado
+print(f"La temperatura estimada a la 1:30 PM es de {temp_interpolada:.2f}°C")
+
+# Graficar los datos
+plt.plot(horas, temperaturas, 'bo-', label='Datos conocidos')
+plt.plot(hora_interpolada, temp_interpolada, 'ro', label=f'Interpolación a 1:30 PM')
+plt.xlabel('Hora del día')
+plt.ylabel('Temperatura (°C)')
+plt.title('Interpolación de Temperatura')
+plt.legend()
+plt.grid(True)
+plt.show()
