@@ -1,0 +1,26 @@
+Planteamiento del problema:
+
+Supongamos que tenemos los datos de la 
+temperatura medida a diferentes horas en 
+un día específico en una ciudad. Queremos 
+conocer la temperatura a una hora en la 
+que no se realizó una medición. Podemos 
+aplicar interpolación lineal para estimar 
+el valor de la temperatura en esa hora.
+
+Datos:
+
+A las 10:00 AM, la temperatura era de 15°C.
+A las 12:00 PM, la temperatura era de 20°C.
+A las 3:00 PM, la temperatura era de 22°C.
+
+
+Problema:
+Queremos estimar la temperatura a las 1:30 PM, 
+usando interpolación lineal.
+
+
+La temperatura estimada a la 1:30 PM, 
+utilizando interpolación lineal, es de 21.00°C. 
+La gráfica generada muestra los datos conocidos y
+el punto interpolado. ​
